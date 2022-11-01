@@ -1,19 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        bg: {
-          DEFAULT: "#fff",
+        "bg": {
+          DEFAULT: "#ffffff",
           800: "#F7F7FC",
           700: "#F0F0F7"
         },
-        txt: {
-          DEFAULT: '#FFFFFF',
+        "txt": {
+          DEFAULT: '#2D2D2D',
           '50': '#FFFFFF',
           '100': '#F1F1F1',
           '200': '#D5D5D5',
@@ -25,7 +25,7 @@ module.exports = {
           '800': '#2D2D2D',
           '900': '#111111'
         },
-        main: "#0C1BC0",
+        main: "#3847ed",
       }
     },
   },

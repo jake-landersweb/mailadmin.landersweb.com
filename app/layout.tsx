@@ -3,8 +3,8 @@ import "../styles/globals.css";
 
 const Root = ({ children }: { children: React.ReactNode }) => {
     return (
-        <html style={{ "scrollPaddingTop": "60px" }} lang="en" className="scroll-smooth text-txt bg-bg">
-            <body>
+        <html style={{ "scrollPaddingTop": "60px" }} lang="en" className="scroll-smooth text-txt bg-bg-700">
+            <body className="">
                 <div className="">
                     <div className="fixed top-0 z-50">
                         {/* <Header /> */}
