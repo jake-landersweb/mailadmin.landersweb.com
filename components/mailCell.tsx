@@ -31,7 +31,7 @@ const MailCell = ({ obj }: { obj: any }) => {
         }
     }
 
-    return <div className="bg-white mb-2 px-4 py-2 rounded-md border-l-[6px] border-l-main">
+    return <div id={obj['id']} className="bg-white px-4 py-2 rounded-md border-l-[6px] border-l-main">
         <div className="flex items-center justify-between">
             <div className="">
                 <h3 className="text-2xl font-medium">{obj['subject']}</h3>
