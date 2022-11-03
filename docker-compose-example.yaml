@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  mailer_admin:
+    container_name: mailer_admin
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 3007:3000
+    volumes:
+      - .:/mailer_admin
+    environment:
+      - HOST=
+      - APIKEY=
+      - NEXT_PUBLIC_HOST=
+      - NEXT_PUBLIC_APIKEY=

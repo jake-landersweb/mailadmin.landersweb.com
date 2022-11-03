@@ -1,0 +1,7 @@
+.next
+.vscode
+.gitignore
+README.md
+docker-compose-example.yaml
+docker-compose.yaml
+Dockerfile
