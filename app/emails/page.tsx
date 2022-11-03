@@ -98,8 +98,8 @@ export default async function Emails({ searchParams }: {
                 tagsChainCommand: tagsChainCommand,
                 filterObjects: filterObjects,
             }} />
-            <div className="grid place-items-center">
-                <div className="flex space-x-4 items-end">
+            <div className="md:grid place-items-center">
+                <div className="md:flex space-x-4 items-end hidden">
                     <div className={`flex space-x-4 items-end ${page < 6 ? "hidden" : ""}`}>
                         <Link props={{
                             href: composeHref({ page: 1, pageSize: pageSize, tags: tags, tagsChainCommand: tagsChainCommand, filterObjects: filterObjects }),
@@ -121,6 +121,26 @@ export default async function Emails({ searchParams }: {
                             </>,
                             isExternal: false,
                             className: `h-[50px] w-[80px] grid place-items-center md:hover:opacity-50 transition-all rounded-md bg-white`
+                        }} />
+                    </div>
+                </div>
+                <div className="md:hidden grid grid-cols-2 gap-4">
+                    <div className={`${page == 1 ? "hidden" : ""} bg-white rounded-md`}>
+                        <Link props={{
+                            href: composeHref({ page: page - 1, pageSize: pageSize, tags: tags, tagsChainCommand: tagsChainCommand, filterObjects: filterObjects }),
+                            child: <>
+                                <p className='text-xl font-light'>Previous</p>
+                            </>,
+                            isExternal: false,
+                            className: `py-2 text-xl font-light grid place-items-center`
+                        }} />
+                    </div>
+                    <div className={`${page == lastPage ? "hidden" : ""} bg-white rounded-md`}>
+                        <Link props={{
+                            href: composeHref({ page: page + 1, pageSize: pageSize, tags: tags, tagsChainCommand: tagsChainCommand, filterObjects: filterObjects }),
+                            child: <>Next</>,
+                            isExternal: false,
+                            className: `py-2 text-xl font-light grid place-items-center`
                         }} />
                     </div>
                 </div>

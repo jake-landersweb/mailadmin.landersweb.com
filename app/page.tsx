@@ -48,7 +48,7 @@ const Index = async () => {
                 </div>
             </>,
             isExternal: false,
-            className: "bg-white p-4 rounded-md grid place-items-center hover:opacity-50 transition-all"
+            className: "bg-white p-4 rounded-md grid place-items-center md:hover:opacity-50 transition-all"
         }} />
     }
 

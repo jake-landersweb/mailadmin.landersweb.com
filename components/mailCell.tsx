@@ -1,5 +1,6 @@
 import epochToPretty from "../lib/functions/epochToPretty"
 import { AiOutlineCheckCircle, AiOutlineCloseCircle, AiOutlineClockCircle } from 'react-icons/ai'
+import Link from "next/link"
 
 const MailCell = ({ obj }: { obj: any }) => {
 
@@ -10,9 +11,9 @@ const MailCell = ({ obj }: { obj: any }) => {
             const t = []
             const parsedTags = obj['tags'].split(",")
             for (var i = 0; i < parsedTags.length; i++) {
-                t.push(<a href={`/emails?tags=${parsedTags[i]}`}><p className="text-gray-400 md:hover:opacity-50 transition-all underline md:hover:no-underline">{parsedTags[i]}</p></a>)
+                t.push(<a href={`/emails?tags=${parsedTags[i]}`}><p className="text-gray-400 md:hover:opacity-50 transition-all underline md:hover:no-underline break-all">{parsedTags[i]}</p></a>)
             }
-            return <div className="flex space-x-2">
+            return <div className="md:flex md:space-x-2 space-y-2 md:space-y-0">
                 <p>Tags: </p>
                 {t}
             </div>
@@ -31,16 +32,21 @@ const MailCell = ({ obj }: { obj: any }) => {
         }
     }
 
-    return <div id={obj['id']} className="bg-white px-4 py-2 rounded-md border-l-[6px] border-l-main">
-        <div className="flex items-center justify-between">
-            <div className="">
-                <h3 className="text-2xl font-medium">{obj['subject']}</h3>
-                <p>Sent: {epochToPretty(obj['sentDate'])}</p>
-                <p>Recipient: {obj['recipient']}</p>
-                {tags()}
+
+    return <div id={obj['id']} className="">
+        <Link href={`/emails/${obj['id']}`}>
+            <div className="bg-white px-4 py-2 rounded-md border-l-[6px] border-l-main overflow-clip md:hover:opacity-50 transition-all">
+                <div className="flex items-center justify-between">
+                    <div className="">
+                        <h3 className="text-2xl font-medium break-words">{obj['subject']}</h3>
+                        <p>Sent: {epochToPretty(obj['sentDate'])}</p>
+                        <p>Recipient: {obj['recipient']}</p>
+                        {tags()}
+                    </div>
+                    {endContent()}
+                </div>
             </div>
-            {endContent()}
-        </div>
+        </Link>
     </div>
 }
 
