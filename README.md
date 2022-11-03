@@ -6,6 +6,10 @@ This is intended for mailer admins, because all sensitive information about the 
 
 It is simple right now, but powerful in seeing what messages are being sent by the mailer.
 
+## Tech
+
+This is built using NextJS 13, which is currently in beta. Uses tailwind for styling, and react-icons for icons.
+
 ## Author
 
 Jake Landers November 2022
